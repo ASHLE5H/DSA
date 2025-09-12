@@ -4,7 +4,6 @@ public:
         int start = 0;
         int n = arr.size();
         int end = n-1;
-        int maxi = INT_MIN;
         int mid = 0;
 
         while(start <= end){
