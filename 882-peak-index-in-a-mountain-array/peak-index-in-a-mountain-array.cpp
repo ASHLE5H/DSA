@@ -1,7 +1,7 @@
 class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
-        int start = 1;
+        int start = 1;              //just to prevent overflow
         int n = arr.size();
         int end = n-1;
         int mid = 0;
