@@ -7,14 +7,6 @@ public:
         int w =0;
         int ht;
         int j = height.size()-1;
-        // for(int i=0;i<height.size();i++){
-        //     for(int j=i+1;j<height.size();j++){
-        //         w = j - i;
-        //         ht = min(height[i],height[j]);
-        //         area = w * ht;
-        //         mw = max(mw,area);
-        //     }
-        // }
         for(int i=0;i<j;){
             w = j - i;
             ht = min(height[i],height[j]);
