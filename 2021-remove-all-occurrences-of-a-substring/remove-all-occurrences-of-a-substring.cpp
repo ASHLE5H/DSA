@@ -2,8 +2,9 @@ class Solution {
 public:
     string removeOccurrences(string s, string part) {
         
-        while(s.find(part) < s.length()){       //s.find(part) will return the first index 
-                                                // of the s were it matches part
+        while(s.find(part) < s.length()){   //s.find(part) will return the first index 
+                                            // of the s were it matches part and if there is 
+                                            // no match then it will return value greater than s.length()
             int i = s.find(part);
             s.erase(i,part.length());           //s.erase() will take start index and end + 1 index to
                                                 //erase it from s
