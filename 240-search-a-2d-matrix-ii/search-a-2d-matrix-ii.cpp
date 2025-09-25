@@ -18,12 +18,7 @@ public:
                     return true;
                 }
                 else if(matrix[i][mid] < target){
-                    if(mid+1){
                     startcol = mid +1;
-                    }
-                    else{
-                        startcol = mid;
-                    }
                 }
                 else{
                     endcol = mid -1;
