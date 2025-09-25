@@ -4,22 +4,31 @@ public:
         
         int n = nums.size();
         vector<int> ans;
+
+        vector<pair<int,int>> arr;  //{value,index}
         for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                    if(i == j){
-                        continue;
-                    }
-                    else{
-                        int sum =0;
-                        sum = nums[i] + nums[j];
-                        if(sum == target){
-                            ans.push_back(i);
-                            ans.push_back(j);
-                            return ans;
-                        }
-                    }
-            }
+            arr.push_back({nums[i],i});
         }
+
+        std::sort(arr.begin(),arr.end());
+
+        int j=n-1;
+        int i = 0;
+        while(i<=j){
+            if (target == arr[i].first+arr[j].first){
+                ans.push_back(arr[i].second);
+                ans.push_back(arr[j].second);
+                return ans;
+            }
+            else if(target < arr[i].first+arr[j].first){
+                j--;
+            }
+            else{
+                i++;
+            }
+
+        }
+
         return ans;
     }
 };
