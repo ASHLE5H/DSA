@@ -4,7 +4,7 @@ public:
 
        int n = nums.size();
        vector<vector<int>> res;
-       set<vector<int>> map;
+       set<vector<int>> set;
 
         sort(nums.begin() , nums.end());
         for(int i=0;i<n;i++){
@@ -22,8 +22,8 @@ public:
                 else{
                     vector<int> x = {nums[i] ,nums[j] , nums[k] };
                     
-                    if(map.find(x) == map.end()){
-                        map.insert(x);
+                    if(set.find(x) == set.end()){
+                        set.insert(x);
                         res.push_back(x);
                     }
                     j++;
