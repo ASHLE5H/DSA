@@ -23,8 +23,7 @@ public:
                             if(sum>target) d--;
                             else if(sum<target) k++;
                             else{
-                                vector<int> v = {nums[i], nums[j],nums[k],nums[d]};
-                                ans.push_back(v);
+                                ans.push_back({nums[i], nums[j],nums[k],nums[d]});
                                 k++;
                                 d--;
 
