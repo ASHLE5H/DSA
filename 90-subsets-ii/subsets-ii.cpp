@@ -19,12 +19,13 @@ public:
 
     }
 
+
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         vector<vector<int>> ans;
         vector<int> curr;
         set<vector<int>> set;
         sort(nums.begin() , nums.end());
-        ss(nums , ans , 0 , curr ,set);
+        ss(nums , ans , 0 , curr ,set );
         return ans;
         
     }
