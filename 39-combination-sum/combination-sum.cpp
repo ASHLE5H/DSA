@@ -18,7 +18,7 @@ public:
         combination.push_back(candidates[idx]);
 
         // check element once
-        getAllCombination( result  , combination , idx+1 ,  target - candidates[idx] , candidates , s );
+        // getAllCombination( result  , combination , idx+1 ,  target - candidates[idx] , candidates , s );
         // check element multiple times
         getAllCombination( result , combination , idx , target - candidates[idx] , candidates , s );
 
