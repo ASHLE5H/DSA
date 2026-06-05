@@ -1,32 +1,42 @@
 class Solution {
 public:
-    void helper(vector<int>& candidates, int target ,vector<int>& current , vector<vector<int>>& result , int start ){
+
+    void getAllCombination( vector<vector<int>>&result , vector<int>&combination ,int idx ,int target , vector<int>&candidates , set<vector<int>>& s){
 
         if(target == 0){
-            result.push_back(current);
+            if(s.find(combination) == s.end()){
+                 result.push_back(combination);
+                 s.insert(combination);
+            }
             return;
         }
 
-        if(target < 0) return;
+        if(target < 0 || candidates.size() <= idx){
+            return;
+        }
+        // add element to comb array
+        combination.push_back(candidates[idx]);
 
-        
-       for(int i=start;i<candidates.size();i++){
-         current.push_back(candidates[i] );
-       
-        helper(candidates , target - candidates[i] , current , result , i);
-        
-        current.pop_back();
-       }
+        // check element once
+        getAllCombination( result  , combination , idx+1 ,  target - candidates[idx] , candidates , s );
+        // check element multiple times
+        getAllCombination( result , combination , idx , target - candidates[idx] , candidates , s );
+
+        // skip element
+        combination.pop_back();
+        getAllCombination( result , combination , idx+1 , target  , candidates , s);
 
     }
 
+
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        
+        vector<vector<int>> result;
+        vector<int> combination;
+        set<vector<int>> s;
 
-            vector<int> current;
-            vector<vector<int>> result;
-            helper( candidates , target , current , result , 0);
+        getAllCombination( result , combination , 0 , target , candidates , s);
 
-            return result;
-
+        return result;
     }
 };
