@@ -30,6 +30,6 @@ public:
             return h2;
         }
 
-        return h1;
+        return h2;
     }
 };
