@@ -30,6 +30,5 @@ public:
             return h2;
         }
 
-        return h2;
     }
 };
